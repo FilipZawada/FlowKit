@@ -147,6 +147,53 @@ hey itemViewController, on checkout lets push checkout screen and prepare it
 
 Important thing to note here is that the signature of `onCheckout` has to be identical with the signature of `prepare`, so arguments can be passed successfully.
 
+# Grouping Flows
+In a usual scenario it's convenient to group your flows in a separate classes.
+For example you can have a `LoginFlow`, `SignUpFlow`, `CheckoutFlow` etc...
+If your app is small, it may be enough to have one `MainFlow`.
+
+```swift
+//
+// Created by Filip on 10/25/16.
+// Copyright (c) 2016 Filip Zawada. All rights reserved.
+//
+
+import FlowKit
+
+class MainFlow {
+    lazy var tutorialScreen: Flow<TutorialViewController> = Flow { [unowned self] lets in
+        let screen = TutorialViewController()
+        
+        screen.onContinue = lets.push(self.loginScreen) { $0.prepare }
+        
+        return screen
+    }
+
+    lazy var dashboardScreen: Flow<DashboardViewController> = Flow { [unowned self] lets in
+        let screen = DashboardViewController()
+        
+        screen.onBack = lets.pop()
+        screen.onLogOut = lets.popTo(self.loginScreen)
+        screen.onExit = lets.popToRoot()
+        
+        return screen
+    }
+    
+    lazy var loginScreen: Flow<LoginViewController> = Flow { [unowned self] lets in
+        let screen = LoginViewController()
+
+        screen.onLogin = lets.push(self.mainScreen)
+        screen.onBack = lets.pop()
+
+        return screen
+    }
+}
+```
+
+_note 1. We had to use `lazy var` to allow `dashboardScreen` to reference `loginScreen` and vice versa. 
+With regular `let` compiler wouldn't allow us to use `loginScreen` in `dashboardScreen`._ 
+
+_note 2. Unfortunately due to compiler bug we have declare variable type, otherwise we can't use `self.`._ 
 
 # Testability
 
