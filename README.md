@@ -227,16 +227,7 @@ FlowKit shall integrate well with:
           .drive(lets.push(loginScreen))
           .addToDisposeBag(disposeBag)
     }
-    ```
-
-- PromiseKit (in preparation)
-
-  ```swift
-  let tutorialScreen = Flow(with: TutorialViewController()) { vc, lets in
-      vc.onContinue.then { lets.push(loginScreen) }
-  }
-  ```
-  
+    ```  
   This is just an illustration, I'm not yet sure how this is going to look like.
 
 # About
