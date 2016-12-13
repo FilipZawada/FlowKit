@@ -1,0 +1,17 @@
+language: objective-c
+osx_image: xcode8
+cache: cocoapods
+env:
+  - WORKSPACE=FlowKit.xcworkspace
+  - SCHEME=FlowKit
+  - UUID=13686955-4D17-4AE7-A77A-3A7FC86A98E3
+
+before_install:
+  - gem install xcpretty
+
+script:
+  - set -o pipefail
+  - xcodebuild -version
+  - xcodebuild -showsdks
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build | xcpretty
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" -destination "id=$UUID" CODE_SIGNING_REQUIRED=NO test | xcpretty
