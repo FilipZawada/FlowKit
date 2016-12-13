@@ -2,6 +2,7 @@ language: objective-c
 osx_image: xcode8
 cache: cocoapods
 env:
+  global:
   - WORKSPACE=FlowKit.xcworkspace
   - SCHEME=FlowKit
   - UUID=13686955-4D17-4AE7-A77A-3A7FC86A98E3
