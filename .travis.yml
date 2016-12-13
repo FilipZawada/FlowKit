@@ -15,3 +15,6 @@ script:
   - xcodebuild -showsdks
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build | xcpretty
   - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" -destination "id=$UUID" CODE_SIGNING_REQUIRED=NO test | xcpretty
+
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
