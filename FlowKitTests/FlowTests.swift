@@ -62,7 +62,7 @@ class FlowTests: XCTestCase {
         }
 
         let bogusViewController = bogusScreen.viewController
-        let dummyViewController = dummyScreen.viewController
+        _ = dummyScreen.viewController
         bogusViewController.onSth("A", true, 1)
 
         let received = dummyScreen.viewController.configured
