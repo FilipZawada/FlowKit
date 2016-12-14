@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		0B72D680EE6C2893398FDF0F /* Pods_FlowKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF669258F2B067AA6082BC7D /* Pods_FlowKitTests.framework */; };
-		5CEBA09A1090131EF0E24338 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA234F922E4095ACFC37B /* README.md */; };
 		5CEBA0AA7B78DD8F54600D0B /* Lets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBAE5884A1632E2DDEABFD /* Lets.swift */; };
 		5CEBA0D107B188156C5966AA /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */; };
 		5CEBA23513EEC722E4EC3C33 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5CEBA1F6895CEB3E1A35D449 /* Podfile */; };
@@ -56,7 +55,6 @@
 		1A56CEB6CEA20B0DD3CFDD18 /* Pods-FlowKitTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-FlowKitTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-FlowKitTests/Pods-FlowKitTests.release.xcconfig"; sourceTree = "<group>"; };
 		5CEBA193B69D744D45F527E6 /* FlowKit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowKit.swift; sourceTree = "<group>"; };
 		5CEBA1F6895CEB3E1A35D449 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		5CEBA234F922E4095ACFC37B /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		5CEBA25931008B65516817C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5CEBA2FBF74D6020219C0DA6 /* FlowKitExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlowKitExample.xcodeproj; path = Examples/FlowKitExample/FlowKitExample.xcodeproj; sourceTree = "<group>"; };
 		5CEBA46BB1C85A6DC5A308EF /* FlowKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -163,7 +161,6 @@
 				37AE3FD74F44165514C576EC /* Frameworks */,
 				5CEBADDB2F769432998EC999 /* Examples */,
 				5CEBA2FBF74D6020219C0DA6 /* FlowKitExample.xcodeproj */,
-				5CEBA234F922E4095ACFC37B /* README.md */,
 			);
 			sourceTree = "<group>";
 		};
@@ -376,7 +373,6 @@
 				5CEBA0AA7B78DD8F54600D0B /* Lets.swift in Sources */,
 				5CEBA24D1A2E5BDFD7AD2CE4 /* LetsFactory.swift in Sources */,
 				5CEBAD24475A9368E60D3173 /* DefaultLets.swift in Sources */,
-				5CEBA09A1090131EF0E24338 /* README.md in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
