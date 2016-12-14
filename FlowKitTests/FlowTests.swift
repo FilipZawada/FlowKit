@@ -62,10 +62,10 @@ class FlowTests: XCTestCase {
         }
 
         let bogusViewController = bogusScreen.viewController
-        _ = dummyScreen.viewController
+        let dummyScreenViewController = dummyScreen.viewController
         bogusViewController.onSth("A", true, 1)
 
-        let received = dummyScreen.viewController.configured
+        let received = dummyScreenViewController.configured
         let expected = ("A", true, 1)
         expect(received!.0).to(equal(expected.0))
         expect(received!.1).to(equal(expected.1))
