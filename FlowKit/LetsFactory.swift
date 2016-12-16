@@ -10,7 +10,7 @@ import UIKit
 open class LetsFactory<ViewController: UIViewController> {
 
     public init() {}
-    
+
     open func makeLets(flow: Flow<ViewController>) -> Lets {
 
         fatalError("Needs to be overridden")

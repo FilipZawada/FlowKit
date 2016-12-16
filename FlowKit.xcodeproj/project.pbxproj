@@ -10,6 +10,7 @@
 		0B72D680EE6C2893398FDF0F /* Pods_FlowKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF669258F2B067AA6082BC7D /* Pods_FlowKitTests.framework */; };
 		5CEBA0AA7B78DD8F54600D0B /* Lets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBAE5884A1632E2DDEABFD /* Lets.swift */; };
 		5CEBA0D107B188156C5966AA /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */; };
+		5CEBA196A53EC19ABB648AE1 /* LetsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA68505DF675C5EA07EEB /* LetsFactoryTest.swift */; };
 		5CEBA23513EEC722E4EC3C33 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = 5CEBA1F6895CEB3E1A35D449 /* Podfile */; };
 		5CEBA24D1A2E5BDFD7AD2CE4 /* LetsFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBAFA20E1FE3821230985A /* LetsFactory.swift */; };
 		5CEBA33360B349B8FB331363 /* FlowKit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA193B69D744D45F527E6 /* FlowKit.swift */; };
@@ -58,6 +59,7 @@
 		5CEBA25931008B65516817C0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
 		5CEBA2FBF74D6020219C0DA6 /* FlowKitExample.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = FlowKitExample.xcodeproj; path = Examples/FlowKitExample/FlowKitExample.xcodeproj; sourceTree = "<group>"; };
 		5CEBA46BB1C85A6DC5A308EF /* FlowKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = FlowKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5CEBA68505DF675C5EA07EEB /* LetsFactoryTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsFactoryTest.swift; sourceTree = "<group>"; };
 		5CEBA6EC1CA699733B9C805E /* FlowKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = FlowKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		5CEBA7DC2B4155824F12E7C7 /* StubLetsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StubLetsFactory.swift; sourceTree = "<group>"; };
 		5CEBA976FF6D44E056F5872B /* LetsStub.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsStub.swift; sourceTree = "<group>"; };
@@ -106,6 +108,7 @@
 				5CEBAB25C45231DE99E026F9 /* Flow+LetsTests.swift */,
 				5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */,
 				5CEBA6C7CBC9CA81828BC6B7 /* stubs */,
+				5CEBA68505DF675C5EA07EEB /* LetsFactoryTest.swift */,
 			);
 			path = FlowKitTests;
 			sourceTree = "<group>";
@@ -384,6 +387,7 @@
 				5CEBA0D107B188156C5966AA /* FlowTests.swift in Sources */,
 				5CEBA430A29790814302C6E8 /* LetsStub.swift in Sources */,
 				5CEBAB1DA2E72C23710DB2A0 /* StubLetsFactory.swift in Sources */,
+				5CEBA196A53EC19ABB648AE1 /* LetsFactoryTest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
