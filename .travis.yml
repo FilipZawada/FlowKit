@@ -11,7 +11,7 @@ script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk iphonesimulator -destination "$TESTDEVICE" build test
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk iphonesimulator -destination "$TESTDEVICE" build test | xcpretty
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
