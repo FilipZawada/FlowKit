@@ -5,15 +5,13 @@ env:
   global:
   - WORKSPACE=FlowKit.xcworkspace
   - SCHEME=FlowKit
-  - UUID=5F911B30-5F23-403B-9697-1DFDC24773C8
   - TESTDEVICE="platform=iOS Simulator,name=iPhone 7,OS=10.0"
 
 script:
   - set -o pipefail
   - xcodebuild -version
   - xcodebuild -showsdks
-  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" CODE_SIGNING_REQUIRED=NO build
-  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" ONLY_ACTIVE_ARCH=NO CODE_SIGN_IDENTITY="" -destination "$TESTDEVICE" -enableCodeCoverage YES CODE_SIGNING_REQUIRED=NO test
+  - xcodebuild -workspace "$WORKSPACE" -scheme "$SCHEME" -sdk iphonesimulator -destination "$TESTDEVICE" build test
 
 after_success:
   - bash <(curl -s https://codecov.io/bash)
