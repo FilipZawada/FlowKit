@@ -1,4 +1,8 @@
+[![Build Status](https://travis-ci.org/FilipZawada/FlowKit.svg?branch=master)](https://travis-ci.org/FilipZawada/FlowKit)
+[![codecov](https://codecov.io/gh/FilipZawada/FlowKit/branch/master/graph/badge.svg)](https://codecov.io/gh/FilipZawada/FlowKit)
+
 # Flow Kit
+![FlowKit](https://cloud.githubusercontent.com/assets/1159454/21260746/c2069212-c387-11e6-9181-17c998547975.png)
 _iOS/Swift_
 
 Define screen flows easily with FlowKit. Elegant syntax, clear separation of concerns and testability makes it a perfect add-on for your current MV* setup.
