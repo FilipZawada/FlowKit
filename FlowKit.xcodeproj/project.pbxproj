@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0B72D680EE6C2893398FDF0F /* Pods_FlowKitTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF669258F2B067AA6082BC7D /* Pods_FlowKitTests.framework */; };
+		5CEBA0379A6DAC0B66898102 /* LetsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBAC7617BBDB1FE5E81BF9 /* LetsTests.swift */; };
 		5CEBA0AA7B78DD8F54600D0B /* Lets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBAE5884A1632E2DDEABFD /* Lets.swift */; };
 		5CEBA0D107B188156C5966AA /* FlowTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */; };
 		5CEBA196A53EC19ABB648AE1 /* LetsFactoryTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEBA68505DF675C5EA07EEB /* LetsFactoryTest.swift */; };
@@ -66,6 +67,7 @@
 		5CEBAB25C45231DE99E026F9 /* Flow+LetsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Flow+LetsTests.swift"; sourceTree = "<group>"; };
 		5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FlowTests.swift; sourceTree = "<group>"; };
 		5CEBABC746BB9542FA89E4A8 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.info; path = Info.plist; sourceTree = "<group>"; };
+		5CEBAC7617BBDB1FE5E81BF9 /* LetsTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsTests.swift; sourceTree = "<group>"; };
 		5CEBAD595212F33FD3403A9E /* DefaultLets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DefaultLets.swift; sourceTree = "<group>"; };
 		5CEBAE5884A1632E2DDEABFD /* Lets.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Lets.swift; sourceTree = "<group>"; };
 		5CEBAFA20E1FE3821230985A /* LetsFactory.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LetsFactory.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				5CEBABA9AB02E5CFDEC0BACA /* FlowTests.swift */,
 				5CEBA6C7CBC9CA81828BC6B7 /* stubs */,
 				5CEBA68505DF675C5EA07EEB /* LetsFactoryTest.swift */,
+				5CEBAC7617BBDB1FE5E81BF9 /* LetsTests.swift */,
 			);
 			path = FlowKitTests;
 			sourceTree = "<group>";
@@ -388,6 +391,7 @@
 				5CEBA430A29790814302C6E8 /* LetsStub.swift in Sources */,
 				5CEBAB1DA2E72C23710DB2A0 /* StubLetsFactory.swift in Sources */,
 				5CEBA196A53EC19ABB648AE1 /* LetsFactoryTest.swift in Sources */,
+				5CEBA0379A6DAC0B66898102 /* LetsTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

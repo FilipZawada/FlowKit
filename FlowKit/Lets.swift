@@ -16,32 +16,33 @@ public protocol Lets {
     func dismiss(animated: Bool) -> () -> Void
 }
 
-// add default values
-public extension Lets {
 
+// add default values
+fileprivate let msg = "The only purpose of this extension is to provide default values with the protocol `Lets`"
+
+public extension Lets {
     func push<Args, ViewController>(_ flow: Flow<ViewController>, animated: Bool = true, with getConfigure: ((ViewController) -> ((Args) -> Void))? = nil)
                     -> (Args) -> Void where ViewController: UIViewController {
-        return self.push(flow, animated: animated, with: getConfigure)
+        fatalError(msg)
     }
 
     func pop(animated: Bool = true) -> () -> Void {
-        return self.pop(animated: animated)
+        fatalError(msg)
     }
 
     func popTo<U>(_ flow: Flow<U>, animated: Bool = true) -> () -> Void {
-        return self.popTo(flow, animated: animated)
+        fatalError(msg)
     }
 
     func popToRoot(animated: Bool = true) -> () -> Void {
-        return self.popToRoot(animated: animated)
+        fatalError(msg)
     }
 
     func present<U>(_ flow: Flow<U>, animated: Bool = true) -> () -> Void {
-        return self.present(flow, animated: animated)
+        fatalError(msg)
     }
 
     func dismiss(animated: Bool = true) -> () -> Void {
-        return self.dismiss(animated: true)
+        fatalError(msg)
     }
-
 }
