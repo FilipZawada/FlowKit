@@ -7,14 +7,14 @@ import XCTest
 import Nimble
 @testable import FlowKit
 
-class DummyViewController: UIViewController {
+fileprivate class DummyViewController: UIViewController {
     var configured: (String, Bool, Int)?
 
     func configure(string: String, bool: Bool, int: Int) {
         configured = (string, bool, int)
     }
 }
-class BogusViewController: UIViewController {
+fileprivate class BogusViewController: UIViewController {
     var onSth: (String, Bool, Int) -> Void = {_, _, _ in }
 }
 class FlowTests: XCTestCase {
@@ -70,6 +70,32 @@ class FlowTests: XCTestCase {
         expect(received!.0).to(equal(expected.0))
         expect(received!.1).to(equal(expected.1))
         expect(received!.2).to(equal(expected.2))
+    }
+
+    func testFlowLetsFactory() {
+        var receivedLets: Lets?
+        let factory = StubLetsFactory<DummyViewController>()
+        let flow = Flow<DummyViewController>(factory: factory) { lets in
+            receivedLets = lets
+            return DummyViewController()
+        }
+
+        _ = flow.viewController
+
+        expect(type(of: receivedLets!)).to(be(LetsStub.self))
+    }
+
+    func testFlowReturnsDefaultLets() {
+        var receivedLets: Lets?
+        let flow = Flow<DummyViewController>() { lets in
+            receivedLets = lets
+            return DummyViewController()
+        }
+
+        // triggers closure above
+        _ = flow.viewController
+
+        expect(type(of: receivedLets!)).to(be(DefaultLets<DummyViewController>.self))
     }
 
 }
