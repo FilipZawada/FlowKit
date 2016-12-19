@@ -31,9 +31,18 @@ public class Flow<T: UIViewController> {
         self.configuration = configuration
     }
 
-    public init(with configuration: @autoclosure @escaping () -> T) {
+    public init(with viewController: @autoclosure @escaping () -> T) {
         letsFactory = DefaultLetsFactory()
-        self.configuration = { _ in configuration() }
+        self.configuration = { _ in viewController() }
+    }
+
+    public init(with viewController: @autoclosure @escaping () -> T, _ configuration: @escaping (T, Lets) -> Void) {
+        letsFactory = DefaultLetsFactory()
+        self.configuration = { lets in
+            let vc = viewController()
+            configuration(vc, lets)
+            return vc
+        }
     }
 
     public init(factory: LetsFactory<T>, configuration: @escaping (Lets) -> T) {

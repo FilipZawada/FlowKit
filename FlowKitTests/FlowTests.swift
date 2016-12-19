@@ -19,7 +19,7 @@ fileprivate class BogusViewController: UIViewController {
 }
 class FlowTests: XCTestCase {
 
-    func testFlowGetViewController_initWithLets() {
+    func testFlowInit_closure() {
         let vc = DummyViewController()
         let flow = Flow { _ in vc }
 
@@ -28,13 +28,29 @@ class FlowTests: XCTestCase {
         expect(viewController).to(equal(vc))
     }
 
-    func testFlowGetViewController_initWithoutLets() {
+    func testFlowInit_with() {
         let vc = DummyViewController()
         let flow = Flow(with: vc)
 
         let viewController = flow.viewController
 
         expect(viewController).to(equal(vc))
+    }
+
+    func testFlowInit_withAndClosure() {
+        let vc = DummyViewController()
+        var receivedViewController: DummyViewController?
+        var receivedLets: Lets?
+
+        let flow = Flow(with: vc) { vc, lets in
+            receivedViewController = vc
+            receivedLets = lets
+        }
+        let viewController = flow.viewController
+
+        expect(receivedViewController).to(equal(vc))
+        expect(viewController).to(equal(vc))
+        expect(type(of: receivedLets!)).to(be(DefaultLets<DummyViewController>.self))
     }
 
     func testFlowGetViewController_returnsSameInstance() {
