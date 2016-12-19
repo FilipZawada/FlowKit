@@ -15,7 +15,7 @@ fileprivate class DummyViewController: UIViewController {
     }
 }
 fileprivate class BogusViewController: UIViewController {
-    var onSth: (String, Bool, Int) -> Void = {_, _, _ in }
+    var onSth: ((String, Bool, Int) -> Void)?
 }
 class FlowTests: XCTestCase {
 
@@ -79,7 +79,7 @@ class FlowTests: XCTestCase {
 
         let bogusViewController = bogusScreen.viewController
         let dummyScreenViewController = dummyScreen.viewController
-        bogusViewController.onSth("A", true, 1)
+        bogusViewController.onSth?("A", true, 1)
 
         let received = dummyScreenViewController.configured
         let expected = ("A", true, 1)
@@ -90,7 +90,7 @@ class FlowTests: XCTestCase {
 
     func testFlowLetsFactory() {
         var receivedLets: Lets?
-        let factory = StubLetsFactory<DummyViewController>()
+        let factory = LetsFactoryStub<DummyViewController>()
         let flow = Flow<DummyViewController>(factory: factory) { lets in
             receivedLets = lets
             return DummyViewController()

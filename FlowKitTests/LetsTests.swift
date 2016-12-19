@@ -51,30 +51,31 @@ class LetsImpl: Lets {
 class LetsTests: XCTestCase {
 
     func testLetsProtocolForwarding() {
-        let flow: Flow<UIViewController> = Flow(with: UIViewController())
         let letsImpl = LetsImpl()
 
         // specify type as `Lets`, so we use `Lets` default extension methods, rather than `LetsImpl`
         let lets: Lets = letsImpl
 
-        _ = lets.push(flow) { $0.loadView }
+        // use `click` so <Args> type can be inferred
+        let click: () -> Void = lets.push(sampleFlow)
+        click()
         expect(letsImpl.pushCount).to(equal(1))
 
-        _ = lets.pop()
+        lets.pop()()
         expect(letsImpl.popCount).to(equal(1))
 
-        // todo: we should also check if  `flow` is forwarded correctly
-        _ = lets.popTo(flow)
+        // todo: we should also check if  `sampleFlow` is forwarded correctly
+        lets.popTo(sampleFlow)()
         expect(letsImpl.popToCount).to(equal(1))
 
-        _ = lets.popToRoot()
+        lets.popToRoot()()
         expect(letsImpl.popToRootCount).to(equal(1))
 
         // todo: we should also check if  `flow` is forwarded correctly
-        _ = lets.present(flow)
+        lets.present(sampleFlow)()
         expect(letsImpl.presentCount).to(equal(1))
 
-        _ = lets.dismiss()
+        lets.dismiss()()
         expect(letsImpl.dismissCount).to(equal(1))
     }
 }

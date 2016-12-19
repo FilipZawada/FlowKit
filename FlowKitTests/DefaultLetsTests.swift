@@ -50,13 +50,14 @@ fileprivate class DummyViewController: UIViewController {
         return nav
     }
 
-    var onTouch: () -> Void = {}
+    var onTouch: (() -> Void)?
 }
 
 class DefaultLetsTests: XCTestCase {
 
     fileprivate var spy = SpyNavigation()
     private var flow = Flow<UIViewController>(with: UIViewController())
+
     override func setUp() {
         spy = SpyNavigation()
         flow = Flow<UIViewController>(with: UIViewController())
@@ -73,7 +74,7 @@ class DefaultLetsTests: XCTestCase {
         }
 
         let vc = flow.viewController
-        vc.onTouch()
+        vc.onTouch?()
 
     }
 

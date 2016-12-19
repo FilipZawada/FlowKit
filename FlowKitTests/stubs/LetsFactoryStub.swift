@@ -7,8 +7,7 @@ import Foundation
 import FlowKit
 import UIKit
 
-// todo: decide on one universal naming convention
-class StubLetsFactory<ViewController: UIViewController>: LetsFactory<ViewController> {
+class LetsFactoryStub<ViewController: UIViewController>: LetsFactory<ViewController> {
 
     public override func makeLets(flow: Flow<ViewController>) -> Lets {
         return LetsStub()

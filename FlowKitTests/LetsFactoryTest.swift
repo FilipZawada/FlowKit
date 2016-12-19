@@ -10,10 +10,9 @@ import Nimble
 class LetsTest: XCTestCase {
 
     func testMakeLets() {
-        let flow = Flow(with: UIViewController())
         let factory = LetsFactory()
         expect { () -> Void in
-            _ = factory.makeLets(flow: flow)
+            _ = factory.makeLets(flow: sampleFlow)
         }.to(throwAssertion())
     }
 }
