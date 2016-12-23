@@ -113,10 +113,10 @@ class ItemViewController: UIViewController {
     var item: Item? // = GreatProduct™
     var quantity = 0
     
-    var onCheckout: (Item, Int) -> Void
+    var onCheckout: (Item, Int) -> Void?
     
     @IBAction func checkout(button: UIButton) {
-        if let item = item {
+        if let item = item, onCheckout = onCheckout {
             onCheckout(item, quantity)        
         }
     }
@@ -157,13 +157,6 @@ For example you can have a `LoginFlow`, `SignUpFlow`, `CheckoutFlow` etc...
 If your app is small, it may be enough to have one `MainFlow`.
 
 ```swift
-//
-// Created by Filip on 10/25/16.
-// Copyright (c) 2016 Filip Zawada. All rights reserved.
-//
-
-import FlowKit
-
 class MainFlow {
     lazy var tutorialScreen: Flow<TutorialViewController> = Flow { [unowned self] lets in
         let screen = TutorialViewController()
@@ -186,7 +179,7 @@ class MainFlow {
     lazy var loginScreen: Flow<LoginViewController> = Flow { [unowned self] lets in
         let screen = LoginViewController()
 
-        screen.onLogin = lets.push(self.mainScreen)
+        screen.onLogin = lets.push(self.dashboardScreen)
         screen.onBack = lets.pop()
 
         return screen
