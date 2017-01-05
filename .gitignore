@@ -3,3 +3,7 @@
 Podfile.lock
 *.xcuserstate
 xcuserdata/
+
+
+## GitHub Token
+.apitoken
