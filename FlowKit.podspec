@@ -10,7 +10,7 @@ Pod::Spec.new do |s|
                    DESC
 
   s.homepage     = "https://github.com/FilipZawada/FlowKit"
-  s.license      = "MIT"
+  s.license      = { :type => "MIT", :file => "./LICENSE" }
   s.author       = { "Filip Zawada" => "" }
   s.social_media_url = "https://twitter.com/Filip_Zawada"
 
@@ -20,7 +20,8 @@ Pod::Spec.new do |s|
     :tag => s.version
   }
 
+  s.ios.deployment_target = '9.0'
+  s.frameworks = 'UIKit'
   s.source_files = "FlowKit/*.swift"
   s.requires_arc = true
 end
-
