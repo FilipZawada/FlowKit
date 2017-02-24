@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FlowKit"
-  s.version      = "0.1.1"
+  s.version      = "0.1.2"
   s.summary      = "Screenflow management for iOS Edit"
 
   s.description  = <<-DESC
@@ -20,7 +20,7 @@ Pod::Spec.new do |s|
     :tag => s.version
   }
 
-  s.ios.deployment_target = '9.0'
+  s.ios.deployment_target = '8.0'
   s.frameworks = 'UIKit'
   s.source_files = "FlowKit/*.swift"
   s.requires_arc = true
