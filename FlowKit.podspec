@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name         = "FlowKit"
-  s.version      = "0.1.2"
+  s.version      = "0.2.0"
   s.summary      = "Screenflow management for iOS Edit"
 
   s.description  = <<-DESC
