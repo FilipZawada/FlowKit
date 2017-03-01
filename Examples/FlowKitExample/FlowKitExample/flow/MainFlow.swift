@@ -22,7 +22,7 @@ class MainFlow {
         let screen = MainViewController()
         
         screen.onBack = lets.pop()
-        screen.onLogOut = lets.popTo(self.loginScreen)
+        screen.onLogOut = lets.popTo(self.loginScreen) { $0.receive }
         screen.onExit = lets.popToRoot()
         
         return screen

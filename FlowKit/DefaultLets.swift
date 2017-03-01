@@ -42,9 +42,19 @@ public class DefaultLets<T: UIViewController>: Lets {
         }
     }
 
-    public func popTo<U>(_ flow: Flow<U>, animated: Bool = true) -> () -> Void {
-        return {
-            _ = self.nav?.popToViewController(flow.viewController, animated: animated)
+    public func popTo<Args, ViewController>(_ flow: Flow<ViewController>,
+                                           animated: Bool = true,
+                                           with getConfigure: ((ViewController) -> ((Args) -> Void))? = nil)
+                    -> (Args) -> Void where ViewController: UIViewController
+    {
+        return { args in
+            let viewController = flow.viewController
+
+            _ = self.nav?.popToViewController(viewController, animated: animated)
+
+            if let configureViewController = getConfigure?(viewController) {
+                _ = configureViewController(args)
+            }
         }
     }
 

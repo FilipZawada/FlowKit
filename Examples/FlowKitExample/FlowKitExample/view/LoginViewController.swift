@@ -19,6 +19,10 @@ class LoginViewController: UIViewController {
         print("received \(string) \(int) \(bool)")
     }
 
+    func receive(_ string: String) {
+        print("received \(string)")
+    }
+
     override func viewDidLoad() {
         view.backgroundColor = .green
 

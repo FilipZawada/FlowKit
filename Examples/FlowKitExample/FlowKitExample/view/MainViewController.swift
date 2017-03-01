@@ -25,13 +25,16 @@ class MainViewController: UIViewController {
         view.addSubview(backButton)
         view.addSubview(exitButton)
 
-        logOutButton.tap(onLogOut)
+        logOutButton.tap { [unowned self] in
+            self.onLogOut("dummy")
+        }
+
         backButton.tap(onBack)
         exitButton.tap(onExit)
     }
 
     var onBack: () -> Void = {}
-    var onLogOut: () -> Void = {}
+    var onLogOut: (String) -> Void = { _ in }
     var onExit: () -> Void = {}
 
     deinit {

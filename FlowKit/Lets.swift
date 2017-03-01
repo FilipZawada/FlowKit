@@ -10,7 +10,8 @@ public protocol Lets {
     func push<Args, ViewController>(_ flow: Flow<ViewController>, animated: Bool, with getConfigure: ((ViewController) -> ((Args) -> Void))?)
                     -> (Args) -> Void where ViewController: UIViewController
     func pop(animated: Bool) -> () -> Void
-    func popTo<U>(_ flow: Flow<U>, animated: Bool) -> () -> Void
+    func popTo<Args, ViewController>(_ flow: Flow<ViewController>, animated: Bool, with getConfigure: ((ViewController) -> ((Args) -> Void))?)
+                    -> (Args) -> Void where ViewController: UIViewController
     func popToRoot(animated: Bool) -> () -> Void
     func present<U>(_ flow: Flow<U>, animated: Bool) -> () -> Void
     func dismiss(animated: Bool) -> () -> Void
@@ -27,8 +28,9 @@ public extension Lets {
         return self.pop(animated: animated)
     }
 
-    func popTo<U>(_ flow: Flow<U>, animated: Bool = true) -> () -> Void {
-        return self.popTo(flow, animated: animated)
+    func popTo<Args, ViewController>(_ flow: Flow<ViewController>, animated: Bool = true, with getConfigure: ((ViewController) -> ((Args) -> Void))? = nil)
+                    -> (Args) -> Void where ViewController: UIViewController {
+        return self.popTo(flow, animated: animated, with: getConfigure)
     }
 
     func popToRoot(animated: Bool = true) -> () -> Void {

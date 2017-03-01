@@ -26,9 +26,10 @@ class LetsImpl: Lets {
         return {}
     }
 
-    func popTo<U>(_ flow: Flow<U>, animated: Bool = true) -> () -> Void {
+    func popTo<Args, ViewController>(_ flow: Flow<ViewController>, animated: Bool = true, with getConfigure: ((ViewController) -> ((Args) -> Void))? = nil)
+                    -> (Args) -> Void where ViewController: UIViewController {
         popToCount += 1
-        return {}
+        return { _ in }
     }
 
     func popToRoot(animated: Bool = true) -> () -> Void {
@@ -65,7 +66,9 @@ class LetsTests: XCTestCase {
         expect(letsImpl.popCount).to(equal(1))
 
         // todo: we should also check if  `sampleFlow` is forwarded correctly
-        lets.popTo(sampleFlow)()
+        // use `click` so <Args> type can be inferred
+        let click2: () -> Void = lets.popTo(sampleFlow)
+        click2()
         expect(letsImpl.popToCount).to(equal(1))
 
         lets.popToRoot()()
